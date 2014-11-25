@@ -1,21 +1,23 @@
 <h2>Datentypen</h2>
 
 <p>
-In Scheme gibt es einfache und kombinierte Datentypen. Einfache Datentypen  sind:<br/>
+In Scheme gibt es einfache und zusammengesetzte Datentypen. Einfache Datentypen, auch elementare Datentypen genannt, sind:<br/>
 <ul>
-	<li>• Wahrheitswerte/boolesche Werte (#f = false, #t = true)</li>
-	<li>• Zahlen (complex, real, rational, integer)</li>
-	<li>• Symbole (identifizier)</li>
-	<li>• Character-Konstanten (character)</li>
-	<li>• Zeichenketten-Konstanten (string)</li>
+	<li>Wahrheitswerte/boolesche Werte (#f = false, #t = true)</li>
+	<li>Zahlen (complex, real, rational, integer)</li>
+	<li>Symbole (identifier) als Bezeichner</li>
+	<li>Character-Konstanten (character)</li>
+	<li>Zeichenketten-Konstanten (string)</li>
 </ul>
 
-<p>Kombinierte Datentypen entstehen durch das Kombinieren von einfachen Datentypen.<br/>
+<p>Zusammengesetzte Datentypen, auch S-Ausdr&uuml;cke genannt, entstehen durch das Kombinieren von einfachen Datentypen und k&ouml;nnen auf unterschiedlichen Weise dargestellt werden.<br/>
 
-Scheme hat folgene Schreibweise für Ausdr&uuml;cke mit kombinierten Datentypen: <br/>
-<p>(< Operator > < Operand1 > < Operand2 > ....)</p>
-<p>Zun&auml;chst k&ouml;nnen wir diese als einen Term (wie in der Mathematik) auffassen, der durch runde Klammern eingeschlossen ist und in dem zuerst ein Rechenzeichen und anschließend die
-Zahlen stehen, man spricht von der Pr&auml;fix-Schreibweise (im Gegensatz zur &uuml;blichen algebraischen Schreibweise oder Infix-Schreibweise):</p>
+Syntax:<br/>
+Pair : (<i>Objekt . Objekt</i>)<br/>
+Liste: (<i>< Operator > < Operand1 > < Operand2 > ....</i>)<br/>
+
+Zun&auml;chst k&ouml;nnen wir diese als einen Term (wie in der Mathematik) auffassen, der durch runde Klammern eingeschlossen ist und in dem zuerst ein Rechenzeichen und anschließend die
+Zahlen stehen, man spricht von der Pr&auml;fix-Schreibweise (im Gegensatz zur &uuml;blichen algebraischen Schreibweise, die auch <a href="css/pre_infix.gif" target="_blank">Infix-Schreibweise</a>) genannt wird:</p>
 
 <table border="1" rules="groups"> <colgroup>
     <col width="120">
@@ -29,19 +31,21 @@ Zahlen stehen, man spricht von der Pr&auml;fix-Schreibweise (im Gegensatz zur &u
   </thead>
   <tbody>
     <tr>
-      <td align="center"><code class="expr" class="expr">(+ 5 16 8)</code></td>
+      <td align="center"><code class="expr">(+ 5 16 8)</code></td>
 	  <td align="center">5 + 16 + 8</td>
     </tr>
 	<tr>
-      <td align="center"><code class="expr" class="expr">(* 3 (- a b))</code></td>
+      <td align="center"><code class="expr">(* 3 (- a b))</code></td>
       <td align="center">3(a - b)</td>
     </tr>
   </tbody>
 </table>
 <p>Dabei gilt:</p>
 <ul>
-	<li>• Klammern treten immer paarweise auf</li>
-	<li>• Formen können geschachtelt werden</li>
+	<li>die umschlie&szlig;enden Klammer sind im Gegensatz zur mathematischen Schreibweise erforderlich</li>
+	<li>Klammern treten immer paarweise auf</li>
+	<li>Ausdr&uuml;cke k&ouml;nnen geschachtelt werden</li>
+	> <code class="expr">(- 30 (+ 20 3))</code> => 7</li>
 </ul>
 
 

@@ -130,7 +130,7 @@ function changerUpdated() {
 var controller;
 $(document).ready(function() {
 	controller = $("#console").console({
-	welcomeMessage:'Wilkomen zu "Programmieren"!',
+	welcomeMessage:'Willkommen zu "Programmieren"!',
 	promptLabel: '> ',
 	commandValidate: onValidate,
 	commandHandle: onHandle,
@@ -147,7 +147,9 @@ $(document).ready(function() {
 	$("#eval").click(setupLink("templates/tutorial/eval.html"));
 	$("#functions").click(setupLink("templates/tutorial/functions.html"));
 	$("#cond").click(setupLink("templates/tutorial/cond.html"));
-	$("#lists").click(setupLink("templates/tutorial/lists.html"));
+	$("#sexpr").click(setupLink("templates/tutorial/sexpr.html"));
+	$("#listfunc").click(setupLink("templates/tutorial/listfunc.html"));
+	$("#createlist").click(setupLink("templates/tutorial/createlist.html"));
 	$("#about").click(setupLink("about.html"));
 	$("#def").click(setupLink("templates/tutorial/definitions.html"));
 

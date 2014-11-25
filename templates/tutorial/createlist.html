@@ -1,0 +1,25 @@
+<h2>Erzeugung einer Liste</h2>
+
+<p>Listen werden zur Repr&auml;sentation strukturierter Daten verwendet. <i>(1 2 3 4)</i> ist eine Liste<br />
+In Scheme dient ja das erste Element einer Liste als Operator, diese standardm&auml;&szlig;ige Evaluation wird durch ein einfaches Hochkomma unmittelbar vor der gesamten Liste unterdr&uuml;kt. <br />
+><code class="expr">'(1 2 3 4)</code> alternativ: ><code class="expr">(quote (1 2 3 4))</code><br />
+(1 2 3 4)<br />
+F&uuml;r die Erzeugung von Listen gibt es au&szlig;erdem noch die komfortable Funktion <i>list</i>, die eine beliebige Anzahl von Argumenten nimmt und diese als Liste zur&uuml;ckgibt.<br />
+
+><code class="expr">(list '(11 12 13 14) (quote (21 22 23 24)) '(31 32 33 34))</code><br />
+((11 12 13 14) (21 22 23 24) (31 32 33 34))<br />
+
+Auch mit <i>cons</i> von "construct", wird eine Liste aus einem beliebigen Wert und einer Liste, ggf. auch der
+leeren Liste <i>()</i>, erzeugt.<br />
+><code class="expr">(cons "apple"  '("pear" "banana"))</code><br />
+("apple" "pear" "banana")<br />
+><code class="expr">(cons "apple"  (cons "pear" '()))</code><br />
+("apple" "pear")<br />
+><code class="expr">(cons "apple"  (cons "pear" empty))</code><br />
+("apple" "pear")<br />
+Ist das zweite Argument von <i>cons</i> keine Liste, so wird ein <i>Paar</i> gebildet:<br />
+><code class="expr">(cons 1 2)</code><br />
+(1 . 2)<br />
+><code class="expr">(cons "pear" "banana")</code><br />
+("pear" . "banana")<br />
+</p>

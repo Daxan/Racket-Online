@@ -2,8 +2,8 @@
 <head>
  <title>Try Racket</title>
  <link href="css/tryrkt.css" rel="stylesheet" type="text/css">
- <link href="css/_styles.css" rel="stylesheet" type="text/css" media="screen">
- <link href="css/gh-fork-ribbon.css" rel="stylesheet" type="text/css">
+ <link href="css/styles.css" rel="stylesheet" type="text/css" media="screen">
+ 
 </head>
 <body>
 
@@ -38,33 +38,35 @@
 				<ol>
 					<li class="file"><a id="expre">Datentypen</a></li>
 					<li class="file"><a id="eval">Auswerten</a></li>
-					<li class="file"><a id="functions">Funktionen</a></li>
-					<li class="file"><a id="cond">Bedingungen</a></li>
+					<li class="file"><a id="functions">Prozeduren und Funktionen</a></li>
+					<li class="file"><a id="cond">Bedingte Ausdr&uuml;cke</a></li>
 				</ol>
 			</li>
 			<li>
 				<label for="folder3">Listen</label> <input type="checkbox" id="folder3" /> 
 				<ol>
-					<li class="file"><a id="expre">File</a></li>
-					<li class="file"><a id="lists">File</a></li>
+					<li class="file"><a id="sexpr">S-Ausdr&uuml;ck</a></li>
+					<li class="file"><a id="createlist">Listenerzeugung</a></li>
+					<li class="file"><a id="listfunc">Listenfunktionen</a></li>
 				</ol>
 			</li>
 			<li>
-				<label for="folder4">()</label> <input type="checkbox" id="folder4" /> 
+				<label for="folder4">Funktionen</label> <input type="checkbox" id="folder4" /> 
+				<ol>
+					<li class="file"><a id="lists">Funktionale Abstraktion und Lambda-Ausdr&uuml;cke</a></li>
+					<li class="file"><a id="loc">Lokale Umgebungen</a></li>
+					<li class="file"><a id="loc">Wertzuweisungen</a></li>
+				</ol>
+			</li>
+			<li>
+				<label for="folder5">Rekursive Funktionen</label> <input type="checkbox" id="folder5" /> 
 				<ol>
 					<li class="file"><a id="expre">File</a></li>
 					<li class="file"><a id="lists">File</a></li>
 				</ol>
 			</li>
 			<li>
-				<label for="folder5">()</label> <input type="checkbox" id="folder5" /> 
-				<ol>
-					<li class="file"><a id="expre">File</a></li>
-					<li class="file"><a id="lists">File</a></li>
-				</ol>
-			</li>
-			<li>
-				<label for="folder6">()</label> <input type="checkbox" id="folder6" /> 
+				<label for="folder6">Funktionale</label> <input type="checkbox" id="folder6" /> 
 				<ol>
 					<li class="file"><a id="expre">File</a></li>
 					<li class="file"><a id="lists">File</a></li>
@@ -79,7 +81,7 @@
 			
 			<div class="console" id="console"></div>
 				<div id="changer">
-				<p class="bottom">Wilkommen zum Lernkurs "Programmieren". Sie sehen den Scheme-Interpreter an der rechten Seite als Interaktionsfenster - es wird <em>REPL</em> genannt.</p>
+				<p class="bottom">Wilkommen zum Lernkurs "Programmieren". Sie sehen den Scheme-Interpreter an der rechten Seite als Interaktionsfenster - es wird <i>REPL</i> genannt.</p>
 				<p class="bottom">Schreiben Sie in der REPL, oder klicken Sie auf <code class="expr">next</code> um mit dem Tutorial zu beginnen!</p>
 				</div>
 			<div  id="some">

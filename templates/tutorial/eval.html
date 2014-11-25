@@ -1,22 +1,19 @@
 <h2>Auswertungsregeln</h2>
 
-<p>Weil Programme Beschreibungen von Ausdrücken sind, muss es Regeln geben nach denen das Programm ausgewertet wird. Dabei befolgt Scheme diese <a href="css/auswerten.gif" target="_blank">drei Regeln</a>:
-<ul>
-	<li>• Konstante Daten, wie Zahlen und Strings, werten sich selbst aus.</li>
-	<li>• Variablen werden in der Symbol-Tabelle gesucht und durch den entsprechenden Wert ersetzt.</li>
-	<li>• Eine Liste muss als erstes immer einen Bezeichner für eine Funktion enthalten. Diese Funktion wird bei der Auswertung auf die folgenden Ausdrücke angewendet.</li>
-</ul>
-    
-    
-    
-
+<p>Es gibt Regeln nach denen das Programm ausgewertet wird. Dabei befolgt Scheme folgenden <a href="css/auswerten.gif" target="_blank">drei Regeln</a>:
+<ol style="list-style:decimal">
+	<li>Ausdr&uuml;cke, die auf einfachen Datentypen basieren, werten sich selber aus.</li> Wie es bei der Zahl <code class="expr">5</code>, oder der Zeichenkette <code class="expr">"Ich lerne Programmieren."</code>der Fall war.</li>
+	<li>Variablen werden durch die entsprechende Werte ersetzt.</li>
+	> <code class="expr" class="expr">(* 3 (- a b))</code> => Es wird nach Wert von <i>a</i> und <i>b</i> gesucht</li>
+	<li>das erste Element einer Liste kann eine Spezialform bezeichnen,<br/> sonst:<br/>
+	alle Argumente einer Liste werden ausgewertet. Das Ergebnis der Auswertung des ersten Listenelements soll eine Funktion sein, die auf die anderen Listenelemente als Argumente angewendet wird.</li>
+	> <code class="expr">(1 2)</code> => Fehler, weil 1 keine Funktion ist</li><br />
+	> <code class="expr">(+ 1 2 3)</code>   => 6</li><br />
 	
-<p>Ausdrücke, die auf einfachen Datentypen basieren, werten sich selber aus, wie wir bei der Zahl <code class="expr">5</code>, oder der Zeichenkette <code class="expr">"Ich lerne Programmieren."</code> gesehen haben.
-
-Mathematische Terme k&ouml;nnen direkt im REPL ausgewertet werden, da eine Reihe von mathematischen Funktionen in Scheme eingebaut sind:<br />
+</ol>
+<p>Mathematische Terme k&ouml;nnen direkt im <i>REPL</i> ausgewertet werden, da eine Reihe von mathematischen Funktionen in Scheme eingebaut sind:<br />
 Hier ein paar Beispiele:<br />
 
-> <code class="expr">(+ 1 2 3)</code>   => 6<br />
 > <code class="expr">(- 42 2)</code>    => 40<br />
 > <code class="expr">(- 20 10 5)</code> => 5<br />
 > <code class="expr">(* 2 3) </code>    => 6<br />
@@ -26,13 +23,6 @@ Hier ein paar Beispiele:<br />
 > <code class="expr">(max 1 2 3)</code> => 3 <br />
 > <code class="expr">(min 1 2 3)</code> => 1 <br />
 > <code class="expr">(abs -42)</code>   => 42 <br />
-<br />
-
-> <code class="expr">(- 30 (+ 20 3))</code> => 7<br />
-> <code class="expr">(1 2)</code> => Fehler, weil 1 keine Funktion ist<br />
-
-
-
 
 
 <p> <code class="expr">next</code></p>

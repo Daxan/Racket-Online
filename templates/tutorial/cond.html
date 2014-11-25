@@ -1,24 +1,23 @@
-<h2>Bedingungen</h2>
+<h2>Bedingte Ausdr&uuml;cke</h2>
 
 <p>In Scheme gibt es mehrere M&ouml;glichkeiten Bedingungen zu formulieren.
-Die einfachste Form ist das <i>if</i>. Die Funktion <i>if</i> wertet zuerst das erste Argument aus. 
-Ist dies nicht <i>#f</i> wird das zweite Argument ausgewertet und als Ergebnis zur&uuml;ckgegeben. Das dritte Argument ist der optionale <i>else</i> Teil.<br/>
+Die einfachste Form ist das <i>if</i>. <br/>
+Syntax:<br/>
+(<i>if test consequent alternate</i>) oder (<i>if test consequent</i>)<br/>
+<p>Die Funktion <i>if</i> wertet zuerst das erste Argument "<i>test</i>" aus. 
+Ist dies nicht <i>#f</i> wird das zweite Argument "<i>consequent</i>" ausgewertet und als Ergebnis zur&uuml;ckgegeben. Das dritte Argument "<i>alternate</i>" ist der optionale "<i>else</i> Teil".<br/>
 
-<code class="expr">(define x 42)
-(if  (= x 42) "richtig" "falsch" )</code> =>  "richtig" <br/>
+<code class="expr">(define x 42)</code><br/>
+<code class="expr">(if  (= x 42) "richtig" "falsch" )</code> =>  "richtig" <br/>
+<!--
+<p>Die Funktion <i>cond</i> kann verwendet werden, anstatt mehrere <i>if-else</i> Bedingungen zu schachteln. Die Argumente m&uuml;ssen 
+jeweils eine Bedingung und einen Ausdruck, der ausgewertet werden soll, wenn die Bedingung <i>#t</i> ist, enthalten. 
+Als letztes Argument ist ein <i>else</i> Teil m&ouml;glich, der ausgewertet wird, wenn keine Bedingung <i>#t</i> lieferte.<br/>-->
 
-<p>Anstatt mehrere <i>if-else</i> Bedingungen zu schachteln, kann die Funktion <i>cond</i> verwendet werden. Die Argumente m&uuml;ssen jeweils eine Bedingung und einen Ausdruck,
- der ausgewertet werden soll, wenn die Bedingung <i>#t</i> ist, enthalten. Als letztes Argument ist ein <i>else</i> Teil m&ouml;glich, der ausgewertet wird, 
- wenn keine Bedingung <i>#t</i> lieferte.<br/>
-
-<code class="expr">(define x 44)
-
-(cond ((< x 42) "kleiner")
-      ((> x 42) "gr&ouml;ßer")
+<code class="expr">(define x 44)</code><br/>
+<code class="expr">(cond ((< x 42) "kleiner")
+      ((> x 42) "gr&ouml;&szlig;er")
       (else     "richtig"))</code> => "gr&ouml;&szlig;er"<br/>
-
-
-
 
 <p><code class="expr">next</code></p>
 <p><code class="expr">back</code></p>

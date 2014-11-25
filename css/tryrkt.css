@@ -62,14 +62,18 @@ color: #555;
 background: transparent;
 text-align: justify;
 font-family: serif;
-padding: 0.05em 0.25em 0.2em 0.25em;
+padding: 0.05em 0.25em 0.25em 0.25em;
 color: #262680;
 }
 
+#changer ol {
+background: transparent
+font-family: serif;
+color: #262680;
+}
 #changer ul {
 background: transparent
 font-family: serif;
-
 color: #262680;
 }
 #changer code {
@@ -77,7 +81,7 @@ background-color: #E0F9FF;
 white-space: pre;
 color: #444;
 font-family: monospace;
-padding: 0.1em 0.25em 0.2em 0.25em;
+padding: 0.1em 0.25em 0.1em 0.25em;
 }
 
 #changer code.expr {

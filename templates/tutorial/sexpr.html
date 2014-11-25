@@ -1,0 +1,18 @@
+<h2>S-Ausdr&uuml;cke</h2>
+
+<p>Definition: <i>sexp -> atom | (sexp . sexp) |()</i><br/>
+ <i>sexp</i> steht für einen S-Ausdruck<br/>
+<i>atom</i> steht für ein atomares Datenobjekt<br/>
+a<br/>
+<i>(sexp . sexp)</i> wird als "gepunktetes Paar" bezeichnet. Der Objekttyp ist <i>pair</i><br/>
+
+(a . b)<br/>
+((a . b) . ((c . d) . (e . f)))<br/>
+<i>()</i> wird als "leere Liste" bezeichnet, d.h. eine Liste, die kein Objekt enthält.<br/>
+Es ist ein Objekt mit einem eigenen Typ, dieses Objekt ist kein <i>pair</i>.<br/>
+()<br/>
+(a . ())<br/>
+(a . (b . (c . ())))</p>
+<div id="note">
+  Paare (auch: Listenzellen) sind Objekte mit zwei Teilen: <i>CAR (content of address register)</i>
+und <i>CDR (content of decrement register)</i>.</div>
