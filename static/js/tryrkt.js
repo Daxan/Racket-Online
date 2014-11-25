@@ -1,5 +1,5 @@
 var currentPage = -1;
-var pages = ["intro.html","howto.html","expre.html","binding.html","functions.html","scope.html","lists.html","modules.html","macros.html","where.html","end.html"];
+var pages = ["intro.html","howto.html","expre.html","eval.html","functions.html","cond.html","sexpr.html","createlist.html","listfunc.html","where.html","end.html"];
 
 //loads pages in #changer with 'next', 'back',  ...
 function goToPage(pageNumber) {
@@ -25,6 +25,18 @@ function appendit(txt){
  
 $("#some").html( txt + "<br/>" + txt);
 }
+
+function eval_racket(code) {
+//var data;
+	$.ajax({
+	url: evalUrl,
+	data: { expr : code },
+	async: false,
+	success: function(res) { data = res; },
+});
+return data;
+}
+
 
 function doCommand(input) {
 if (input.match(/^gopage /)) {
