@@ -1,0 +1,22 @@
+<h2>Prozeduren und Funktionen</h2>
+
+<p>Eine Prozedur oder Funktion wird mittels <i>define</i> und <i>lambda</i> definiert. 
+Hinter <i>define</i> folgt, wie üblich, der Name. Anschlie&szlig;end werden durch <i>lambda</i> die Funktionsargumente und der Funktionsrumpf definiert.<br/>
+
+<code class="expr">(define Funktionsname
+  (lambda (Funktionsargument1 Arg2) (Funktionsrumpf) ))</code><br/>
+
+<p>Dieses Beispiel addiert zu einer Zahl 23:<br/>
+
+<code class="expr">(define add23
+  (lambda (x) (+ x 23)))</code>
+
+<code class="expr">(add23 5)</code> => 28<br/>
+
+<p>Dies lässt sich auch mittels define verkürzt so schreiben:<br/>
+
+<code class="expr">(define (add23 x) (+ x 23))</code> </p>
+
+
+<p><code class="expr">next</code></p>
+<p><code class="expr">back</code></p>

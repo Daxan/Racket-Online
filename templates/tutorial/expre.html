@@ -1,0 +1,48 @@
+<h2>Datentypen</h2>
+
+<p>
+In Scheme gibt es einfache und kombinierte Datentypen. Einfache Datentypen  sind:<br/>
+<ul>
+	<li>• Wahrheitswerte/boolesche Werte (#f = false, #t = true)</li>
+	<li>• Zahlen (complex, real, rational, integer)</li>
+	<li>• Symbole (identifizier)</li>
+	<li>• Character-Konstanten (character)</li>
+	<li>• Zeichenketten-Konstanten (string)</li>
+</ul>
+
+<p>Kombinierte Datentypen entstehen durch das Kombinieren von einfachen Datentypen.<br/>
+
+Scheme hat folgene Schreibweise für Ausdr&uuml;cke mit kombinierten Datentypen: <br/>
+<p>(< Operator > < Operand1 > < Operand2 > ....)</p>
+<p>Zun&auml;chst k&ouml;nnen wir diese als einen Term (wie in der Mathematik) auffassen, der durch runde Klammern eingeschlossen ist und in dem zuerst ein Rechenzeichen und anschließend die
+Zahlen stehen, man spricht von der Pr&auml;fix-Schreibweise (im Gegensatz zur &uuml;blichen algebraischen Schreibweise oder Infix-Schreibweise):</p>
+
+<table border="1" rules="groups"> <colgroup>
+    <col width="120">
+    <col width="120">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Pr&auml;fix-Notation</th>
+	  <th>Infix-Notation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center"><code class="expr" class="expr">(+ 5 16 8)</code></td>
+	  <td align="center">5 + 16 + 8</td>
+    </tr>
+	<tr>
+      <td align="center"><code class="expr" class="expr">(* 3 (- a b))</code></td>
+      <td align="center">3(a - b)</td>
+    </tr>
+  </tbody>
+</table>
+<p>Dabei gilt:</p>
+<ul>
+	<li>• Klammern treten immer paarweise auf</li>
+	<li>• Formen können geschachtelt werden</li>
+</ul>
+
+
+
