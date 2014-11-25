@@ -27,7 +27,7 @@ $("#some").html( txt + "<br/>" + txt);
 }
 
 function eval_racket(code) {
-//var data;
+var data;
 	$.ajax({
 	url: evalUrl,
 	data: { expr : code },
