@@ -28,7 +28,12 @@ $("#some").html( txt + "<br/>" + txt);
 
 function eval_racket(code) {
 //var data;
-	$.get("static/js/about.html", function(data) { $("#some").html(data); });
+$.ajax({
+	url: "static/js/about.html",
+	async: false,
+	success: function(data) { $("#some").html(data); }
+});
+	//$.get("static/js/about.html", function(data) { $("#some").html(data); });
 //return data;
 }
 
