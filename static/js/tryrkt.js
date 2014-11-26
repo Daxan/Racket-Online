@@ -27,13 +27,15 @@ $("#some").html( txt + "<br/>" + txt);
 }
 
 function eval_racket(code) {
-//$.get("static/js/about.html", function(data) { $("#some").html(data); });
-//var data;
-$.ajax({
-	url: "static/js/about.html",
-	async: false,
-	success: function(data) { $("#some").html(data + "<br/>" + "hhh"); }
-});
+
+	var data;
+	$.ajax({
+		url: "static/js/about.html",
+		data: { expr : code },
+		async: false,
+		success: function(res) { $("#some").html(data); }
+	});
+	//$.get("static/js/about.html", function(data) { $("#some").html(data); });
 	//
 	
 //return data;
