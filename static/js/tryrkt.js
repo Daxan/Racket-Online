@@ -32,7 +32,7 @@ function eval_racket(code) {
 $.ajax({
 	url: "static/js/about.html",
 	async: false,
-	success: function(data) { $("#some").html(data); }
+	success: function(data) { $("#some").html(data + "<br/>" + "hhh"); }
 });
 	//
 	
