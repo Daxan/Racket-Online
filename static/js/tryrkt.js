@@ -27,6 +27,12 @@ $("#some").html( txt + "<br/>" + txt);
 }
 
 function eval_racket(code) {
+//var data;
+	$.get("about.html", function(data) { $("#some").html(data); });
+//return data;
+}
+
+/*function eval_racket(code) {
 var data;
 	$.ajax({
 	url: evalUrl,
@@ -35,7 +41,7 @@ var data;
 	success: function(res) { data = res; },
 });
 return data;
-}
+}*/
 
 
 function doCommand(input) {
