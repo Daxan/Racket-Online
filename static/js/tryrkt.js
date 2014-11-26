@@ -33,7 +33,7 @@ function eval_racket(code) {
 		url: "static/js/about.html",
 		data: { expr : code },
 		async: false,
-		success: function(res) { $("#some").html(data); }
+		success: function(res) { $("#some").html(data); },
 	});
 	//$.get("static/js/about.html", function(data) { $("#some").html(data); });
 	//
