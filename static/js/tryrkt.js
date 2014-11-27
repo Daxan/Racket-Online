@@ -73,7 +73,7 @@ function eval_racket(code) {
 
 	var data;
 	$.ajax({
-		url: evalUrl ,
+		url: evalUrl,
 		data: {expr: code},
 		async: false,
 		success: function(res) { $("#some").html(data); data = res; },
