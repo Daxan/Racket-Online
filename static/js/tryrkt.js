@@ -33,12 +33,12 @@ function eval_racket(code) {
 		url: "",
 		data: { expr : code },
 		async: false,
-		success: function(res) { $("#some").html(data); },
+		success: function(res) { $("#some").html(data); data = res; },
 	});
 	//$.get("static/js/about.html", function(data) { $("#some").html(data); });
 	//
 	
-//return data;
+return data;
 }
 
 /*function eval_racket(code) {
