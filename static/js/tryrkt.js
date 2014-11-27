@@ -75,7 +75,7 @@ function eval_racket(code) {
 	$.ajax({
 		url: "main.rkt",
 		data: {expr: code},
-		async: true,
+		async: false,
 		success: function(res) { data = res; },
 	});
 	//$.get("static/js/about.html", function(data) { $("#some").html(data); });
