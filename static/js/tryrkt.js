@@ -30,7 +30,7 @@ function eval_racket(code) {
 
 	var data;
 	$.ajax({
-		//url: "static/js/about.html",
+		url: "@url",
 		data: { expr : code },
 		async: false,
 		success: function(res) { $("#some").html(data); },
