@@ -1,6 +1,45 @@
 var currentPage = -1;
 var pages = ["intro.html","howto.html","expre.html","eval.html","functions.html","cond.html","sexpr.html","createlist.html","listfunc.html","where.html","end.html"];
 
+var pageExitConditions = [
+    {
+        verify: function(data) { return false; }
+    },
+    {
+        verify: function(data) { return data.expr == "(hc-append (circle 10) (rectangle 10 20))"; }
+    },
+    {
+        verify: function(data) { return data.expr == "(square 10)"; }
+    },
+    {
+        verify: function(data) { return data.expr == "(checkerboard (square 10))"; }
+    },
+    {
+        verify: function(data) { return false; }
+    },
+    {
+        verify: function (data) { return false; }
+    },
+    {
+        verify: function (data) { return false; }
+    },
+    {
+        verify: function (data) { return false;}
+    },
+    {
+        verify: function (data) { return false; }
+    },
+    {
+        verify: function (data) { return false; }
+    },
+    {
+        verify: function (data) { return false; }
+    },
+    {
+        verify: function (data) { return false; }
+    }
+];
+
 //loads pages in #changer with 'next', 'back',  ...
 function goToPage(pageNumber) {
 if (pageNumber == currentPage || pageNumber < 0 || pageNumber >= pages.length) {
@@ -20,7 +59,11 @@ changerUpdated();
 function setupLink(url) {
 return function(e) { $("#changer").load(url, function(data) { $("#changer").html(data);changerUpdated();  }); }
 }
-
+function setupExamples(controller) {
+    $(".code").click(function(e) {
+        controller.promptText($(this).text());
+    });
+}
 function appendit(txt){
  
 $("#some").html( txt + "<br/>" + txt);
@@ -31,7 +74,7 @@ function eval_racket(code) {
 	var data;
 	$.ajax({
 		url: "main.rkt",
-		data: { "expr" : code },
+		data: {expr: code},
 		async: false,
 		success: function(res) { $("#some").html(data); data = res; },
 	});
