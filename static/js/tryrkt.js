@@ -55,7 +55,7 @@ return data;
 function complete_racket(str){
     var data;
     $.ajax({
-        url: "",
+        url: "main.rkt",
         data: { complete : str },
         async: false,
         success: function(res) { data = res; },
