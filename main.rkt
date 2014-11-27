@@ -78,8 +78,8 @@ json
 ;;------------------------------------------------------------------
 (define-values (dispatch urls)
 (dispatch-rules
-[("") home]
-[("home") home]
+[("") index]
+[("index") index]
 [("links") links]
 [("about") about]
 [("tutorial") #:method "post" tutorial]))
@@ -124,8 +124,8 @@ content)
 (define (about request)
 (make-response
 (include-template "templates/about.html")))
-;; Home page
-(define (home request)
+;; index / Home page
+(define (index request)
 (home-with (make-ev) request))
 (define (home-with ev request)
 (local [(define (response-generator embed/url)
@@ -133,7 +133,7 @@ content)
 ;[complete-url (embed/url next-complete)]
 )
 (make-response
-(include-template "templates/home.html"))))
+(include-template "templates/index.html"))))
 (define (next-eval request)
 (eval-with ev request))
 ;(define (next-complete request)(complete-with ev request))
@@ -227,6 +227,6 @@ dispatch
 #:port 8080
 #:servlet-regexp #rx""
 #:extra-files-paths (list static)
-#:servlet-path "/"
+#:servlet-path "/main"
 #:manager mgr
 #:log-file "try-racket-serve-log.txt"))
