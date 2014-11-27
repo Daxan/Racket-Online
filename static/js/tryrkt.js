@@ -74,7 +74,7 @@ function appendit(txt){
 function eval_racket(code) {
 	var data;
 	$.ajax({
-		url: "main.rkt",
+		url: "static/js/tryrkt.js",
 		data: { expr: code },
 		async: false,
 		success: function(res) { data = res; },
