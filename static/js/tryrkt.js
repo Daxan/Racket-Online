@@ -57,7 +57,10 @@ changerUpdated();
 }
 //loads pages in #changer from navi
 function setupLink(url) {
-return function(e) { $("#changer").load(url, function(data) { $("#changer").html(data);changerUpdated();  }); }
+	return function(e) { $("#changer").load(url, function(data) { 
+		$("#changer").html(data);changerUpdated();  
+		});
+	}
 }
 function setupExamples(controller) {
     $(".code").click(function(e) {
@@ -65,16 +68,14 @@ function setupExamples(controller) {
     });
 }
 function appendit(txt){
- 
-$("#some").html( txt + "<br/>" + txt);
+	$("#some").html( txt + "<br/>" + txt);
 }
 
 function eval_racket(code) {
-
 	var data;
 	$.ajax({
 		url: "main.rkt",
-		data: {expr: code},
+		data: { expr: code },
 		async: false,
 		success: function(res) { data = res; },
 	});
@@ -98,7 +99,7 @@ return data;
 function complete_racket(str){
     var data;
     $.ajax({
-        url: "main.rkt",
+        url: "static/js/tryrkt.js",
         data: { complete : str },
         async: false,
         success: function(res) { data = res; },
