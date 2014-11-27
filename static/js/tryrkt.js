@@ -52,6 +52,17 @@ var data;
 return data;
 }*/
 
+function complete_racket(str){
+    var data;
+    $.ajax({
+        url: "",
+        data: { complete : str },
+        async: false,
+        success: function(res) { data = res; },
+    });
+    return data;
+}
+
 
 function doCommand(input) {
 if (input.match(/^gopage /)) {
