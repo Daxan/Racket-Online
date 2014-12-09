@@ -21,6 +21,7 @@ Ein Pr&auml;dikat ist eine Funktion, die einen Wahrheitswert (true, false) liefe
 <code class="expr">(or #f '() #f)</code> => ()<br/>
 <code class="expr">(and #t #f #t)</code> => #f<br/>
 <code class="expr">(and #t '() #t)</code> => #t <br/>
+<br/>
 Typpr&uuml;fung: Mit den Pr&auml;dikaten k&ouml;nnen wir feststellen, ob der angegebene Ausdruck von einem bestimmten Typ ist:<br/>
 <code class="expr">(pair? '())</code> => #f<br/>
 <code class="expr">(pair? '(a b))</code> => #t<br/>
@@ -28,10 +29,20 @@ Typpr&uuml;fung: Mit den Pr&auml;dikaten k&ouml;nnen wir feststellen, ob der ang
 <code class="expr">(list? '(a b))</code> => #t<br/>
 <code class="expr">(number? '(a b))</code> => #f<br/>
 <code class="expr">(number? 7)</code> => #t<br/>
+<br/>
+Vergleiche: <i>eq?</i> ergibt #t nur, wenn beide Argumente identisch sind; sollte vor allem für den Vergleich von Symbolen verwendet werden:<br/>
+<code class="expr">(eq? 'a 'a) </code> => #t<br/>
+<code class="expr">(eq? 'a 'b) </code> => #f<br/>
+<code class="expr">(eq? 2 2) </code> => unspec<br/>
+<code class="expr">(eq? "abc" "abc") </code> => unspec<br/>
 
+Mit <i>equal?</i> ergibt #t nur, wenn beide Argumente gleich sind, d.h., wenn es sich um identische Objekte oder um &auml;quivalente Zahlen, Listen, Zeichen, Zeichenketten oder Vektoren handelt. Zwei Objekte
+sind &auml;quivalent, wenn sie eine gleiche externe Repr&auml;sentation haben:<br/>
+<code class="expr">(equal? 'a 'a) </code> => #t<br/>
+<code class="expr">(equal? 'a 'b) </code> => #f<br/>
+<code class="expr">(equal? 2 2) </code> => #t<br/>
+<code class="expr">(equal? "abc" "abc") </code> => #t<br/>
  </p>
-
-
 <div id="note">
   *	nicht in DrScheme, da wird die leere Liste wie #t behandelt.<br/>
   **	 <i>if</i> wird bei bedingten Ausdr&uuml;cken behandelt.<br/>
