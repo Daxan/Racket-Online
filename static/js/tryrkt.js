@@ -1,5 +1,5 @@
 var currentPage = -1;
-var pages = ["intro.html","howto.html","expre.html","eval.html","functions.html","cond.html","sexpr.html","createlist.html","listfunc.html","where.html","end.html"];
+var pages = ["intro.html","howto.html","expre.html","eval.html","functions.html","predicate.html","cond.html","sexpr.html","createlist.html","listfunc.html","where.html","end.html"];
 
 var pageExitConditions = [
     {

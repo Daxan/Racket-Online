@@ -1,6 +1,12 @@
 <h2>Bedingte Ausdr&uuml;cke</h2>
 
-<p>In Scheme gibt es mehrere M&ouml;glichkeiten Bedingungen zu formulieren.
+<p>Praktisches Programmieren mit funktionsorientierten Sprachen kann man als Konstruktionsaufgabe
+verstehen. Man konstruiert komplexere Datenstrukturen aus einfacheren
+und man bildet zusammengesetzte Ausdr&uuml;cke aus Basisausdr&uuml;cken. Dabei kommen auch
+<u>bedingte Ausdriicke</u>, oder Konditionale, vor. <br/>
+
+
+In Scheme gibt es mehrere M&ouml;glichkeiten Bedingungen zu formulieren.
 Die einfachste Form ist das <i>if</i>. <br/>
 Syntax:<br/>
 (<i>if test consequent alternate</i>) oder (<i>if test consequent</i>)<br/>
@@ -9,10 +15,11 @@ Ist dies nicht <i>#f</i> wird das zweite Argument "<i>consequent</i>" ausgewerte
 
 <code class="expr">(define x 42)</code><br/>
 <code class="expr">(if  (= x 42) "richtig" "falsch" )</code> =>  "richtig" </p>
-<!--
+
 <p>Die Funktion <i>cond</i> kann verwendet werden, anstatt mehrere <i>if-else</i> Bedingungen zu schachteln. Die Argumente m&uuml;ssen 
 jeweils eine Bedingung und einen Ausdruck, der ausgewertet werden soll, wenn die Bedingung <i>#t</i> ist, enthalten. 
-Als letztes Argument ist ein <i>else</i> Teil m&ouml;glich, der ausgewertet wird, wenn keine Bedingung <i>#t</i> lieferte.<br/>-->
+Als letztes Argument ist ein <i>else</i> Teil m&ouml;glich, der ausgewertet wird, wenn keine Bedingung <i>#t</i> lieferte.<br/>
+Wir erl&auml;utern dies an folgendem Beispiel.<br/>
 
 <code class="expr">(define x 44)</code><br/>
 <code class="expr">(cond ((< x 42) "kleiner")

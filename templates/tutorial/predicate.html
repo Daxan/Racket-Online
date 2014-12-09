@@ -33,13 +33,13 @@ Ein Pr&auml;dikat ist eine Funktion, die einen Wahrheitswert (true, false) liefe
 <u>Vergleiche:</u> <i>eq?</i> vergleicht, ob es sich bei den beiden &uuml;bergebenen Argumenten um das selbe Objekt im Speicher handelt. <i>eq?</i> ergibt #t nur, wenn beide Argumente identisch sind; sollte vor allem für den Vergleich von Symbolen verwendet werden:<br/>
 <code class="expr">(eq? 'a 'a) </code> => #t<br/>
 <code class="expr">(eq? 'a 'b) </code> => #f<br/>
+<code class="expr">(eq? (cons 1 2) (cons 1 2)) </code> => #f<br/>
 
 
 Mit <i>equal?</i> vergleicht die Werte/Inhalte der beiden &uuml;bergebenen Argumente. <i>equal?</i> ergibt #t nur, wenn beide Argumente gleich sind, d.h., wenn es sich um identische Objekte oder um &auml;quivalente Zahlen, Listen, Zeichen, Zeichenketten oder Vektoren handelt:<br/>
 <code class="expr">(equal? 'a 'a) </code> => #t<br/>
 <code class="expr">(equal? 'a 'b) </code> => #f<br/>
-<code class="expr">(equal? 2 2) </code> => #t<br/>
-<code class="expr">(equal? "abc" "abc") </code> => #t<br/>
+<code class="expr">(equal? (cons 1 2) (cons 1 2)) </code> => #t<br/>
  </p>
 <div id="note">
   *	nicht in DrScheme, da wird die leere Liste wie #t behandelt.<br/>
