@@ -8,7 +8,7 @@
 <p>die Bedingungen enthaltenden Scheme-Formen als <i>true</i> bzw. <i>false</i> interpretieren. In bedingten Ausdr&uuml;cken werden nur <i>#f</i> und die <i>leere Liste
 ()</i>* als false interpretiert, alle anderen Objekte der Typen <i>pair, symbol, number, string, vector, procedure</i> und <i>#t</i> ergeben <i>true</i>:<br/>
 
-<code class="expr">(if #t 'true 'false)</code> => true<br/>
+<code class="expr">(if #t 'true 'false)</code> ** => true<br/>
 <code class="expr">(if #f 'true 'false)</code> => false<br/>
 <code class="expr">(if '() 'true 'false)</code> => true<br/>
 <code class="expr">(if 1 'true 'false)</code> => true<br/>
@@ -34,5 +34,6 @@ Typpr&uuml;fung: Mit den Pr&auml;dikaten k&ouml;nnen wir feststellen, ob der ang
 <p><code class="expr">next</code></p>
 <p><code class="expr">back</code></p>
 <div id="note">
-  * nicht in DrScheme, da wird die leere Liste wie #t behandelt.
+  *	nicht in DrScheme, da wird die leere Liste wie #t behandelt.<br/>
+  **	 <i>if</i> wird bei bedingten Ausdr&uuml;cken behandelt.
 </div>
