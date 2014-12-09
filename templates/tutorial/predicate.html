@@ -1,0 +1,28 @@
+<h2>Wahrheitswerte</h2>
+
+<p>In Scheme gibt es die Wahrheitswerte <i>true</i> und <i>false</i>, die mit <i>#t</i> bzw. <i>#f</i> symbolisiert werden.
+<ul>
+	<li>Die Auswertung von <i>#f</i> liefert <i>#f</i>.</li>
+	<li>Die Auswertung von <i>#t</i> liefert <i>#t</i>.</li>
+</ul>
+<p>die Bedingungen enthaltenden Scheme-Formen als <i>true</i> bzw. <i>false</i> interpretieren. In bedingten Ausdr&uuml;cken werden nur <i>#f</i> und die <i>leere Liste
+()</i>* als false interpretiert, alle anderen Objekte der Typen <i>pair, symbol, number, string, vector, procedure</i> und <i>#t</i> ergeben <i>true</i>:<br/>
+
+<code class="expr">(if #t 'true 'false)</code> => true<br/>
+<code class="expr">(if #f 'true 'false)</code> => false<br/>
+<code class="expr">(if '() 'true 'false)</code> => true<br/>
+<code class="expr">(if 1 'true 'false)</code> => true<br/>
+<code class="expr">(if '(a b c) 'true 'false)</code> => true<br/> 
+Ein Pr&auml;dikat ist eine Funktion, die einen Wahrheitswert (true,false) liefert:<br/>
+
+<code class="expr">(null? '())</code> => #t<br/>
+<code class="expr">(null? '(a b))</code> => #f<br/>
+<code class="expr">(or #t #f #t)</code> => #t<br/>
+<code class="expr">(or #f '() #f)</code> => ()<br/>
+<code class="expr">(and #t #f #t)</code> => #f<br/>
+<code class="expr">(and #t '() #t)</code> => #t <br/>
+ </p>
+
+
+<p><code class="expr">next</code></p>
+<p><code class="expr">back</code></p>
