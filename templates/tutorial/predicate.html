@@ -22,7 +22,7 @@ Ein Pr&auml;dikat ist eine Funktion, die einen Wahrheitswert (true, false) liefe
 <code class="expr">(and #t #f #t)</code> => #f<br/>
 <code class="expr">(and #t '() #t)</code> => #t <br/>
 <br/>
-Typpr&uuml;fung: Mit den Pr&auml;dikaten k&ouml;nnen wir feststellen, ob der angegebene Ausdruck von einem bestimmten Typ ist:<br/>
+<u>Typpr&uuml;fung:</u> Mit den Pr&auml;dikaten k&ouml;nnen wir feststellen, ob der angegebene Ausdruck von einem bestimmten Typ ist:<br/>
 <code class="expr">(pair? '())</code> => #f<br/>
 <code class="expr">(pair? '(a b))</code> => #t<br/>
 <code class="expr">(list? '())</code> => #t<br/>
@@ -30,7 +30,7 @@ Typpr&uuml;fung: Mit den Pr&auml;dikaten k&ouml;nnen wir feststellen, ob der ang
 <code class="expr">(number? '(a b))</code> => #f<br/>
 <code class="expr">(number? 7)</code> => #t<br/>
 <br/>
-Vergleiche: <i>eq?</i> vergleicht, ob es sich bei den beiden &uuml;bergebenen Argumenten um das selbe Objekt im Speicher handelt. <i>eq?</i> ergibt #t nur, wenn beide Argumente identisch sind; sollte vor allem für den Vergleich von Symbolen verwendet werden:<br/>
+<u>Vergleiche:</u> <i>eq?</i> vergleicht, ob es sich bei den beiden &uuml;bergebenen Argumenten um das selbe Objekt im Speicher handelt. <i>eq?</i> ergibt #t nur, wenn beide Argumente identisch sind; sollte vor allem für den Vergleich von Symbolen verwendet werden:<br/>
 <code class="expr">(eq? 'a 'a) </code> => #t<br/>
 <code class="expr">(eq? 'a 'b) </code> => #f<br/>
 
