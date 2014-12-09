@@ -13,7 +13,7 @@
 <code class="expr">(if '() 'true 'false)</code> => true<br/>
 <code class="expr">(if 1 'true 'false)</code> => true<br/>
 <code class="expr">(if '(a b c) 'true 'false)</code> => true<br/> 
-Ein Pr&auml;dikat ist eine Funktion, die einen Wahrheitswert (true,false) liefert:<br/>
+Ein Pr&auml;dikat ist eine Funktion, die einen Wahrheitswert (true, false) liefert:<br/>
 
 <code class="expr">(null? '())</code> => #t<br/>
 <code class="expr">(null? '(a b))</code> => #f<br/>
@@ -21,8 +21,18 @@ Ein Pr&auml;dikat ist eine Funktion, die einen Wahrheitswert (true,false) liefer
 <code class="expr">(or #f '() #f)</code> => ()<br/>
 <code class="expr">(and #t #f #t)</code> => #f<br/>
 <code class="expr">(and #t '() #t)</code> => #t <br/>
- </p>
+Typpr&uuml;fung: Mit den Pr&auml;dikaten k&ouml;nnen wir feststellen, ob der angegebene Ausdruck von einem bestimmten Typ ist:<br/>
+<code class="expr">(pair? '())</code> => #f<br/>
+<code class="expr">(pair? '(a b))</code> => #t<br/>
+<code class="expr">(list? '())</code> => #t<br/>
+<code class="expr">(list? '(a b))</code> => #t<br/>
+<code class="expr">(number? '(a b))</code> => #f<br/>
+<code class="expr">(number? 7)</code> => #t<br/>
 
+ </p>
 
 <p><code class="expr">next</code></p>
 <p><code class="expr">back</code></p>
+<div id="note">
+  * nicht in DrScheme, da wird die leere Liste wie #t behandelt.
+</div>
