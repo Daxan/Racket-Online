@@ -30,14 +30,12 @@ Typpr&uuml;fung: Mit den Pr&auml;dikaten k&ouml;nnen wir feststellen, ob der ang
 <code class="expr">(number? '(a b))</code> => #f<br/>
 <code class="expr">(number? 7)</code> => #t<br/>
 <br/>
-Vergleiche: <i>eq?</i> ergibt #t nur, wenn beide Argumente identisch sind; sollte vor allem für den Vergleich von Symbolen verwendet werden:<br/>
+Vergleiche: <i>eq?</i> vergleicht, ob es sich bei den beiden &uuml;bergebenen Argumenten um das selbe Objekt im Speicher handelt. <i>eq?</i> ergibt #t nur, wenn beide Argumente identisch sind; sollte vor allem für den Vergleich von Symbolen verwendet werden:<br/>
 <code class="expr">(eq? 'a 'a) </code> => #t<br/>
 <code class="expr">(eq? 'a 'b) </code> => #f<br/>
-<code class="expr">(eq? 2 2) </code> => unspec<br/>
-<code class="expr">(eq? "abc" "abc") </code> => unspec<br/>
 
-Mit <i>equal?</i> ergibt #t nur, wenn beide Argumente gleich sind, d.h., wenn es sich um identische Objekte oder um &auml;quivalente Zahlen, Listen, Zeichen, Zeichenketten oder Vektoren handelt. Zwei Objekte
-sind &auml;quivalent, wenn sie eine gleiche externe Repr&auml;sentation haben:<br/>
+
+Mit <i>equal?</i> vergleicht die Werte/Inhalte der beiden &uuml;bergebenen Argumente. <i>equal?</i> ergibt #t nur, wenn beide Argumente gleich sind, d.h., wenn es sich um identische Objekte oder um &auml;quivalente Zahlen, Listen, Zeichen, Zeichenketten oder Vektoren handelt:<br/>
 <code class="expr">(equal? 'a 'a) </code> => #t<br/>
 <code class="expr">(equal? 'a 'b) </code> => #f<br/>
 <code class="expr">(equal? 2 2) </code> => #t<br/>
