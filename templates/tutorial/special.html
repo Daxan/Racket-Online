@@ -1,0 +1,38 @@
+<h2>Sonderregeln</h2>
+
+<p> Scheme-Interpreter &uuml;berpr&uuml;ft vor dem Auswerten den Ausdruck auf folgenden Sonderregeln und wenn keine vorhanden ist, dann wertet ihn nach den normalen 
+<a href="templates/tutorial/eval.html" target="_blank">Auswerteregeln</a> aus:<br/>
+<ul>
+	<li><u>quote:</u> Ein Argument von <i>quote</i> bleibt unausgewertet! D.h. <i>quote</i> hat h&ouml;here Pr&ouml;rit&auml;t.  <br/>
+	><code class="expr">(quote (+ 1 2))</code> => (+ 1 2)<br /></li>
+
+	<li><u>if:</u> Bei  <br/>
+	><code class="expr">(define l1 '()) <br /> (if l1 '() (car l1))</code>, sollte das Ergebnis <i>#f</i> sein, aber es liefert: () </li>
+
+	<li><u>define:</u>   <br/>
+	><code class="expr">(define l2 '(a b c d))</code><br />
+	><code class="expr">l2</code>  => (a b c d)<br /> 
+
+	<ol>
+		<li>Element ist das Wort <i>define</i></li>
+		<li>Element ist ein Symbol als Variablbezeichnung</li>
+			><code class="expr">(define 2 '(a b c d))</code> => Error, Variable muss Symbol sein und keine Zahl!<br /> 
+		<li>Element ist ein Ausdruck und  wird ausgewertet (-> 3.Element wird an Variable gebunden)</li>
+		
+	</ol>
+	</li>
+	<li><u>lambda:</u>   <br/>
+	><code class="expr">(lambda (x) (+ x 1)) </code> entspricht <i>f(x) = x + 1</i>  <br/>
+	<ol>
+		<li>Element ist das Wort <i>lambda</i></li>
+		<li>Element ist Parameterliste (ohne Typ)</li>
+		<li>Element und ggf. weitere sind Funktionssk&ouml;rper</li>
+	</ol>
+	man kann auch f&uuml;r <i>x</i> Wert mit eingeben:<br />
+	><code class="expr">((lambda (x) (+ x 1))5) </code> => <i>f(5)</i> =6<br/>
+	</li>
+
+	
+</ul>
+
+</p>
