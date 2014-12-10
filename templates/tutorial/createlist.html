@@ -1,17 +1,18 @@
 <h2>Erzeugung einer Liste</h2>
 
-<p>Listen werden zur Repr&auml;sentation strukturierter Daten verwendet. Der Ausdruck <i>(a b c)</i> ist nach unserm bisherigen Verst&auml;ndis auszuwerten. Eine Funktion <i>a</i> gibt es aber
-nicht und <i>b</i> und <i>c</i> liefern auch kein brauchbares Ergebnis bei der Auswertung. Eine Auswertung ist auch nicht beabsichtigt, (a b c) ist eine <u>Liste</u>. Um dem Interpreter
-mitzuteilen, dass der Ausdruck (a b c) eine Liste ist und nicht auszuwerten ist, gibt es die Funktion <i>quote</i> (oder ein einfaches Hochkomma "'"). <br />
+<p>Der Ausdruck <i>(a b c)</i> ist nach unserm bisherigen Verst&auml;ndis auszuwerten. Eine Funktion <i>a</i> gibt es aber
+nicht und <i>b</i> und <i>c</i> liefern auch kein brauchbares Ergebnis bei der Auswertung. Eine Auswertung ist auch nicht beabsichtigt, <i>(a b c)</i> ist eine <u><i>Liste</i></u>. Um dem Interpreter
+mitzuteilen, dass der Ausdruck <i>(a b c)</i> eine <i>Liste</i> ist und nicht auszuwerten ist, gibt es die Funktion <i>quote</i>* (oder ein einfaches Hochkomma "'"). <br />
  <br />
 ><code class="expr">(quote (1 2 3 4))</code> alternativ: ><code class="expr">'(1 2 3 4)</code><br />
 => (1 2 3 4)<br />
-F&uuml;r die Erzeugung von Listen gibt es au&szlig;erdem noch die komfortable Funktion <i>list</i>, die eine beliebige Anzahl von Argumenten nimmt und diese als Liste zur&uuml;ckgibt.<br />
+<br />
+Zur Listenerzeugung gibt es au&szlig;erdem noch die komfortable Funktion <i>list</i>, die eine beliebige Anzahl von Argumenten nimmt und diese als <i>Liste</i> zur&uuml;ckgibt.<br />
 
 ><code class="expr">(list '(11 12 13 14) (quote (21 22 23 24)) '(31 32 33 34))</code><br />
 ((11 12 13 14) (21 22 23 24) (31 32 33 34))<br />
 
-Auch mit <i>cons</i> von "construct", wird eine Liste aus einem beliebigen Wert und einer Liste, ggf. auch der
+Auch mit <i>cons</i> von "<i>construct</i>", wird eine <i>Liste</i> aus einem beliebigen Wert und einer <i>Liste</i>, ggf. auch der
 leeren Liste <i>()</i>, erzeugt.<br />
 ><code class="expr">(cons "apple"  '("pear" "banana"))</code><br />
 ("apple" "pear" "banana")<br />
@@ -19,9 +20,14 @@ leeren Liste <i>()</i>, erzeugt.<br />
 ("apple" "pear")<br />
 ><code class="expr">(cons "apple"  (cons "pear" empty))</code><br />
 ("apple" "pear")<br />
-Ist das zweite Argument von <i>cons</i> keine Liste, so wird ein <i>Paar</i> gebildet:<br />
+Ist das zweite Argument von <i>cons</i> keine <i>Liste</i>, so wird ein <i>Paar</i> gebildet:<br />
 ><code class="expr">(cons 1 2)</code><br />
 (1 . 2)<br />
 ><code class="expr">(cons "pear" "banana")</code><br />
 ("pear" . "banana")<br />
 </p>
+
+<div id="note">
+  *	<i>quote</i> ist eine <i>Spezialform</i>, siehe <i>Grundlagen->Sonderregeln</i><br/>
+</div>
+
