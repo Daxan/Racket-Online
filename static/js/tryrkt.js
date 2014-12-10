@@ -230,7 +230,7 @@ $(document).ready(function() {
 	$("#functions").click(setupLink("templates/tutorial/functions.html"));
 	$("#predicate").click(setupLink("templates/tutorial/predicate.html"));
 	$("#cond").click(setupLink("templates/tutorial/cond.html"));
-	//$("#special").click(setupLink("templates/tutorial/special.html"));
+	$("#special").click(setupLink("templates/tutorial/special.html"));
 	$("#sexpr").click(setupLink("templates/tutorial/sexpr.html"));
 	$("#listfunc").click(setupLink("templates/tutorial/listfunc.html"));
 	$("#createlist").click(setupLink("templates/tutorial/createlist.html"));
