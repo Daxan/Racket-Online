@@ -1,9 +1,11 @@
 <h2>Erzeugung einer Liste</h2>
 
-<p>Listen werden zur Repr&auml;sentation strukturierter Daten verwendet. <i>(1 2 3 4)</i> ist eine Liste<br />
-In Scheme dient ja das erste Element einer Liste als Operator, diese standardm&auml;&szlig;ige Evaluation wird durch ein einfaches Hochkomma unmittelbar vor der gesamten Liste unterdr&uuml;kt. <br />
-><code class="expr">'(1 2 3 4)</code> alternativ: ><code class="expr">(quote (1 2 3 4))</code><br />
-(1 2 3 4)<br />
+<p>Listen werden zur Repr&auml;sentation strukturierter Daten verwendet. Der Ausdruck <i>(a b c)</i> ist nach unserm bisherigen Verst&auml;ndis auszuwerten. Eine Funktion <i>a</i> gibt es aber
+nicht und <i>b</i> und <i>c</i> liefern auch kein brauchbares Ergebnis bei der Auswertung. Eine Auswertung ist auch nicht beabsichtigt, (a b c) ist eine <u>Liste</u>. Um dem Interpreter
+mitzuteilen, dass der Ausdruck (a b c) eine Liste ist und nicht auszuwerten ist, gibt es die Funktion <i>quote</i> (oder ein einfaches Hochkomma "'"). <br />
+ <br />
+><code class="expr">(quote (1 2 3 4))</code> alternativ: ><code class="expr">'(1 2 3 4)</code><br />
+=> (1 2 3 4)<br />
 F&uuml;r die Erzeugung von Listen gibt es au&szlig;erdem noch die komfortable Funktion <i>list</i>, die eine beliebige Anzahl von Argumenten nimmt und diese als Liste zur&uuml;ckgibt.<br />
 
 ><code class="expr">(list '(11 12 13 14) (quote (21 22 23 24)) '(31 32 33 34))</code><br />

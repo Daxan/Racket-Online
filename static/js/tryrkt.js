@@ -227,7 +227,7 @@ $(document).ready(function() {
 	$("#howto").click(setupLink("templates/tutorial/howto.html"));
 	$("#expre").click(setupLink("templates/tutorial/expre.html"));
 	$("#eval").click(setupLink("templates/tutorial/eval.html"));
-	$("#ev").click(setupLink("templates/tutorial/eval.html"));
+	//$("#ev").click(setupLink("templates/tutorial/eval.html"));
 	$("#functions").click(setupLink("templates/tutorial/functions.html"));
 	$("#predicate").click(setupLink("templates/tutorial/predicate.html"));
 	$("#cond").click(setupLink("templates/tutorial/cond.html"));
