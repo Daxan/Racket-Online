@@ -1,15 +1,29 @@
 <h2>Funktionen auf Listen</h2>
 
-<p>Um auf einzelne Listenelemente zuzugreifen, verwendet man die Prozeduren <i>car</i>, f&uuml;r
+<p>Um auf einzelne Listenelemente zuzugreifen, verwendet man die Selektionfunktionen <i>car</i>, f&uuml;r
 das erste Listenelement, und <i>cdr</i>, sprich: "kudder", f&uuml;r die Restliste ohne das erste Element.<br />
-><code class="expr">(car '(a b c))</code>==> a<br/> 
-><code class="expr">(cdr '(a b c))</code>==> (b c)<br/> 
-<p>Um auf das erste Listenelement zuzugreifen, wird die Prozeduren <i>first</i> verwendet, und <i>second</i>, f&uuml;r das zweite Element, usw..<br />
+><code class="expr">(car '(a b c))</code>=> a<br/> 
+><code class="expr">(cdr '(a b c))</code>=> (b c)<br/> 
+Die Selektionfunktionen k&ouml;nnen wie auch andere Funktionen geschachtelt angewendet werden.
+><code class="expr">(car(cdr(car '((1 2 3)))))</code>=> 2<br/>
+Die Auswertungsreihenfolge:<br/>
+<ol>
+	<li><code class="expr">(car '((1 2 3)))</code>=> (1 2 3), denn '((1 2 3)) entspricht '((1 2 3)())</li>
+	<li><code class="expr">(cdr '(1 2 3))</code>=> (2 3)</li>
+	<li><code class="expr">(car '(2 3))</code>=> 2</li>
+</ol>
+Eine Verk&uuml;rzung der Schreibweise geschachtelter Aufrufe von <i>car</i> und <i>cdr</i> ergibt neue Funktionsnamen: <br/>
+Notiere ein <i><b>c</b></i>, gefolgt von  der Sequenz der mittleren Buchstaben der Funktionen <i>c<b>a</b>r</i> 
+und <i>c<b>d</b>r</i> in der gegebenen Reihenfolge, gefolgt von einem <i><b>r</b></i>.<br/>
+><code class="expr">(car(cdr(car '((1 2 3)))))</code> entspricht: <code class="expr">(cadar '((1 2 3)))</code><br/>
 
-><code class="expr">(first '(1 (+ 1 2) 3))</code>  ==>  1<br/>
-><code class="expr">(second '(1 (+ 1 2) 3))</code>  ==>  (+ 1 2)<br/>
-><code class="expr">(first (second '(1 (+ 1 2) 3)))</code> ==> +<br/>
-><code class="expr">(second (second '(1 (+ 1 2) 3)))</code> ==> 1<br/>
-><code class="expr">(third (second '(1 (+ 1 2) 3)))</code> ==> 2</p>
+</p>
+<p>Um auf das erste Listenelement zuzugreifen, wird auch die Prozeduren <i>first</i> verwendet, und <i>second</i>, f&uuml;r das zweite Element, usw..<br />
+
+><code class="expr">(first '(1 (+ 1 2) 3))</code>  =>  1<br/>
+><code class="expr">(second '(1 (+ 1 2) 3))</code>  =>  (+ 1 2)<br/>
+><code class="expr">(first (second '(1 (+ 1 2) 3)))</code> => +<br/>
+><code class="expr">(second (second '(1 (+ 1 2) 3)))</code> => 1<br/>
+><code class="expr">(third (second '(1 (+ 1 2) 3)))</code> => 2</p>
   
 
