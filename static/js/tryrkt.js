@@ -235,6 +235,8 @@ $(document).ready(function() {
 	$("#listfunc").click(setupLink("templates/tutorial/listfunc.html"));
 	$("#createlist").click(setupLink("templates/tutorial/createlist.html"));
 	$("#enviroment").click(setupLink("templates/tutorial/enviroment.html"));
+	$("#evalproc").click(setupLink("templates/tutorial/evalproc.html"));
+	
 	$("#about").click(setupLink("about.html"));
 	$("#def").click(setupLink("templates/tutorial/definitions.html"));
 

@@ -1,0 +1,26 @@
+<h2>Auswertung von Prozeduren</h2>
+
+<i>(define (Name Arg) (Funktionsrumpf))</i><br/>
+<code class="expr">(define (square x) (* x x))</code><br/>
+<code class="expr">(square 17)</code> => 289<br/>
+<code class="expr">(square (+ 2 15))</code> => 289<br/>
+
+<p>Prozeduren k&ouml;nnen in anderen Prozeduren wiederverwendet werden:<br/>
+
+<code class="expr">(define (sum-of-square x y)
+  (+ ( square x) (square y)))</code><br/>
+<code class="expr">(sum-of-square 5 4)</code> => 41<br/>
+<br/>
+<code class="expr">(define (f a) 
+ (sum-of-square (+ a 1)(* a 2)))</code><br/>
+ 
+<code class="expr">(f 6)</code> => 193<br/>
+Die Auswertung einer Prozedur liefert den Rumpf, in den die Parameter eingesetzt werden:<br/>
+<code class="expr">(f 6)</code><br/>
+<code class="expr">(sum-of-square (+ 6 1) (* 6 2))</code><br/>
+<code class="expr">(sum-of-square 7 12)</code><br/>
+<code class="expr">(+ ( square 7) (square 12))</code><br/>
+<code class="expr">(+ 49 144)</code> => 193<br/>
+ </p>
+
+
