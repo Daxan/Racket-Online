@@ -227,7 +227,6 @@ $(document).ready(function() {
 	$("#howto").click(setupLink("templates/tutorial/howto.html"));
 	$("#expre").click(setupLink("templates/tutorial/expre.html"));
 	$("#eval").click(setupLink("templates/tutorial/eval.html"));
-	//$("#ev").click(setupLink("templates/tutorial/eval.html"));
 	$("#functions").click(setupLink("templates/tutorial/functions.html"));
 	$("#predicate").click(setupLink("templates/tutorial/predicate.html"));
 	$("#cond").click(setupLink("templates/tutorial/cond.html"));
@@ -235,6 +234,7 @@ $(document).ready(function() {
 	$("#sexpr").click(setupLink("templates/tutorial/sexpr.html"));
 	$("#listfunc").click(setupLink("templates/tutorial/listfunc.html"));
 	$("#createlist").click(setupLink("templates/tutorial/createlist.html"));
+	$("#enviroment").click(setupLink("templates/tutorial/enviroment.html"));
 	$("#about").click(setupLink("about.html"));
 	$("#def").click(setupLink("templates/tutorial/definitions.html"));
 
