@@ -1,0 +1,25 @@
+﻿
+Verzeichnis: RacketOnline
+
+static-> (css, js)
+	css:
+	*.scc
+
+	js:
+	tryrkt.js
+	...
+
+template->(tuturial)
+	*.html
+
+index.html
+
+main.rkt
+autocomplete.rkt
+info.rkt
+
+index.html ruft tryrkt.js beim laden und zeigt die Konsele an!
+tryrkt.js reagiert auf eingaben in der Konsole
+in tryracket wird mit $ajax die evaluation vom Server geholt!
+
+dahinter steckt main.rkt die die evaluation ueber nimmt!
