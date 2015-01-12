@@ -1,25 +1,15 @@
-﻿
-Verzeichnis: RacketOnline
+﻿Sehr geehrter Herr Fritzsche,
 
-static-> (css, js)
-	css:
-	*.scc
+anbei eine neue Version meines Textbuch. Bitte lesen sie:
+2.5.1 
+3.1. (letzte Abschnitt: Interaktivitaet)
+3.2 alles neu, wobei 3.2.1. muss noch erweitert werden, mir fehlen Info und Erfahrung mit OPAL!
+4. bis 4.4
 
-	js:
-	tryrkt.js
-	...
+Danke und schoennes Wochenende.
 
-template->(tuturial)
-	*.html
+Viele Gruesse
 
-index.html
+Chrakhan
 
-main.rkt
-autocomplete.rkt
-info.rkt
 
-index.html ruft tryrkt.js beim laden und zeigt die Konsele an!
-tryrkt.js reagiert auf eingaben in der Konsole
-in tryracket wird mit $ajax die evaluation vom Server geholt!
-
-dahinter steckt main.rkt die die evaluation ueber nimmt!

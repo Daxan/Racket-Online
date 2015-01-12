@@ -1,5 +1,5 @@
 var currentPage = -1;
-var pages = ["intro.html","howto.html","expre.html","eval.html","functions.html","predicate.html","cond.html","sexpr.html","createlist.html","listfunc.html","where.html","end.html"];
+var pages = ["intro","howto","expre","eval","functions","predicate","cond","sexpr","createlist","listfunc","where","end"];
 
 var pageExitConditions = [
     {
@@ -42,64 +42,59 @@ var pageExitConditions = [
 
 //loads pages in #changer with 'next', 'back',  ...
 function goToPage(pageNumber) {
-if (pageNumber == currentPage || pageNumber < 0 || pageNumber >= pages.length) {
-return;
-}
-currentPage = pageNumber;
-var block = $("#changer");
-//block.fadeOut(function(e) {
-block.load( "templates/tutorial/"+ pages[pageNumber]  , function() {
-block.fadeIn();
-changerUpdated();
-//});
-});
+	// invalid page number
+	if (pageNumber == currentPage || pageNumber < 0 || pageNumber >= pages.length) {
+			return;
+	}
 
+	currentPage = pageNumber;
+
+	var block = $("#changer");
+  	//block.fadeOut(function(e) {
+      block.load("/tutorial", { 'page' : pages[pageNumber] }, function() {
+      block.fadeIn();
+      changerUpdated();
+		});
+	//});
 }
 //loads pages in #changer from navi
-function setupLink(url) {
+function setupLink2(url) {
 	return function(e) { $("#changer").load(url, function(data) { 
 		$("#changer").html(data);changerUpdated();  
 		});
 	}
 }
-function setupExamples(controller) {
-    $(".code").click(function(e) {
-        controller.promptText($(this).text());
-    });
+
+function setupLink(url) {
+    return function(e) { $("#changer").load(url, function(data) {
+		$("#changer").html(data);
+		changerUpdated();  
+		});
+	}
 }
+
+
 function appendit(txt){
-	$("#some").html( txt + "<br/>" + txt);
+	
+	text = text + $("#some").html( txt + "<br/>" );
 }
 
 function eval_racket(code) {
 	var data;
 	$.ajax({
-		url: "static/js/tryrkt.js",
+		url: evalUrl,
 		data: { expr: code },
 		async: false,
 		success: function(res) { data = res; },
 	});
-	//$.get("static/js/about.html", function(data) { $("#some").html(data); });
-	//
 	
 return data;
 }
 
-/*function eval_racket(code) {
-var data;
-	$.ajax({
-	url: evalUrl,
-	data: { expr : code },
-	async: false,
-	success: function(res) { data = res; },
-});
-return data;
-}*/
-
 function complete_racket(str){
     var data;
     $.ajax({
-        url: "static/js/tryrkt.js",
+        url: evalUrl,
         data: { complete : str },
         async: false,
         success: function(res) { data = res; },
@@ -109,35 +104,35 @@ function complete_racket(str){
 
 
 function doCommand(input) {
-if (input.match(/^gopage /)) {
-goToPage(parseInt(input.substring("gopage ".length)));
-return true;
-}
-switch (input) {
-	case 'next':
-	case 'forward':
-	goToPage(currentPage + 1);
-	return true;
-
-	case 'previous':
-	case 'prev':
-	case 'back':
-	goToPage(currentPage - 1);
-	return true;
-
-	case 'restart':
-	case 'reset':
-	case 'home':
-	case 'quit':
-	goToPage(0);
-	return true;
-	
-	default:
-	return false;
+	if (input.match(/^gopage /)) {
+		goToPage(parseInt(input.substring("gopage ".length)));
+		return true;
 	}
+	switch (input) {
+		case 'next':
+		case 'forward':
+		goToPage(currentPage + 1);
+		return true;
+
+		case 'previous':
+		case 'prev':
+		case 'back':
+		goToPage(currentPage - 1);
+		return true;
+
+		case 'restart':
+		case 'reset':
+		case 'home':
+		case 'quit':
+		goToPage(0);
+		return true;
+		
+		default:
+		return false;
+		}
 }
 function onValidate(input) {
-return (input != "");
+	return (input != "");
 }
 
 function onComplete(line) {
@@ -147,14 +142,14 @@ function onComplete(line) {
 	var data = complete_racket(input);
 	// handle error
 	if (data.error) {
-	controller.commandResult(data.message, "jquery-console-message-error");
-	return [];
+		controller.commandResult(data.message, "jquery-console-message-error");
+		return [];
 	}
 	else {
 	var res = JSON.parse(data.result);
 	for (var i = 0; i<res.length; i++) {
-	res[i] = prefix+res[i];
-	}
+		res[i] = prefix+res[i];
+		}
 	return res;
 	}
 }
@@ -174,18 +169,18 @@ function onHandle(line, report) {
 	var data = datas[i];
 		// handle error
 		if (data.error) {
-		results.push({msg: data.message, className: "jquery-console-message-error"});
+			results.push({msg: data.message, className: "jquery-console-message-error"});
 		} // handle page
 		else if (currentPage >= 0 && pageExitConditions[currentPage].verify(data)) {
-		goToPage(currentPage + 1);
+			goToPage(currentPage + 1);
 		}
 		// display expr results
 		if(/#\"data:image\/png;base64,/.test(data.result)){
-		$('.jquery-console-inner').append('<img src="' + data.result.substring(2) + " /><br />");
-		controller.scrollToBottom();
-		results.push({msg: "", className: "jquery-console-message-value"});
+			$('.jquery-console-inner').append('<img src="' + data.result.substring(2) + " /><br />");
+			controller.scrollToBottom();
+			results.push({msg: "", className: "jquery-console-message-value"});
 		} else {
-		results.push({msg: data.result, className: "jquery-console-message-value"});
+			results.push({msg: data.result, className: "jquery-console-message-value"});
 		}
 	}
 	return results;
@@ -208,7 +203,7 @@ function changerUpdated() {
 	});
 	});
 }
-
+var text = "";
 var controller;
 $(document).ready(function() {
 	controller = $("#console").console({
@@ -223,21 +218,22 @@ $(document).ready(function() {
 	cols:1
 });
 	changerUpdated();
-	$("#intro").click(setupLink("templates/tutorial/intro.html"));
-	$("#howto").click(setupLink("templates/tutorial/howto.html"));
-	$("#expre").click(setupLink("templates/tutorial/expre.html"));
-	$("#eval").click(setupLink("templates/tutorial/eval.html"));
-	$("#functions").click(setupLink("templates/tutorial/functions.html"));
-	$("#predicate").click(setupLink("templates/tutorial/predicate.html"));
-	$("#cond").click(setupLink("templates/tutorial/cond.html"));
-	$("#special").click(setupLink("templates/tutorial/special.html"));
-	$("#sexpr").click(setupLink("templates/tutorial/sexpr.html"));
-	$("#listfunc").click(setupLink("templates/tutorial/listfunc.html"));
-	$("#createlist").click(setupLink("templates/tutorial/createlist.html"));
-	$("#enviroment").click(setupLink("templates/tutorial/enviroment.html"));
-	$("#evalproc").click(setupLink("templates/tutorial/evalproc.html"));
+	$("#intro").click(setupLink("intro"));
+	$("#howto").click(setupLink("howto"));
+	$("#expre").click(setupLink("expre"));
+	$("#eval").click(setupLink("eval"));
+	$("#functions").click(setupLink("functions"));
+	$("#predicate").click(setupLink("predicate.html"));
+	$("#cond").click(setupLink("cond.html"));
+	$("#special").click(setupLink("special.html"));
+	$("#sexpr").click(setupLink("sexpr.html"));
+	$("#listfunc").click(setupLink("listfunc.html"));
+	$("#createlist").click(setupLink("createlist.html"));
+	$("#enviroment").click(setupLink("enviroment.html"));
+	$("#evalproc").click(setupLink("evalproc.html"));
 	
-	$("#about").click(setupLink("about.html"));
+	$("#about").click(setupLink("about"));
+	$("#links").click(setupLink("links"));
 	$("#def").click(setupLink("templates/tutorial/definitions.html"));
 
 
