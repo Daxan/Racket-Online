@@ -166,6 +166,7 @@ function onHandle(line, report) {
 		// handle error
 		if (data.error) {
 			results.push({msg: data.message, className: "jquery-console-message-error"});
+			appendit(data.message);
 		} // handle page
 		else if (currentPage >= 0 && pageExitConditions[currentPage].verify(data)) {
 			goToPage(currentPage + 1);
@@ -221,7 +222,7 @@ $(document).ready(function() {
 	$("#eval").click(setupLink("eval"));
 	$("#functions").click(setupLink("functions"));
 	$("#predicate").click(setupLink("predicate"));
-	$("#cond").click(setupLink("cond"));
+	$("#conds").click(setupLink("conds"));
 	$("#special").click(setupLink("special"));
 	$("#sexpr").click(setupLink("sexpr"));
 	$("#listfunc").click(setupLink("listfunc"));

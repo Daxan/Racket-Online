@@ -12,7 +12,7 @@
 	margin-left: -30px !important;
 }
 #navigator li.file a  {/* file text */
-	background: url(document.png) 10px 0 no-repeat;
+	background: url(/img/document.png) 10px 0 no-repeat;
 	color: black;
 	cursor: pointer;
 	text-decoration: none;
@@ -31,13 +31,13 @@
 	top: 0;
 }
 #navigator li input + ol {
-	background: url(toggle-small-expand.png) 40px 0 no-repeat;
+	background: url(/img/toggle-small-expand.png) 40px 0 no-repeat;
 	margin: -0.938em 0 0 -44px; /* 15px */
 	height: 1em;
 }
 #navigator li input + ol > li { display: none; margin-left: -20px !important; padding-left: 1px; }
 #navigator li label  {/* folder */
-	background: url(folder-horizontal.png) 15px 3px no-repeat;
+	background: url(/img/folder-horizontal.png) 15px 3px no-repeat;
 	cursor: pointer;
 	text-align: left;
 	padding-left: 40px;
@@ -45,7 +45,7 @@
 	margin: 0 50 0 0;
 }
 #navigator li input:checked + ol {
-	background: url(toggle-small.png) 40px 5px no-repeat;
+	background: url(/img/toggle-small.png) 40px 5px no-repeat;
 	margin: -1.25em 0 0 -44px; /* 20px */
 	padding: 1.563em 0 0 80px;
 	height: auto;
