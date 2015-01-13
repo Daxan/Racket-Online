@@ -67,24 +67,12 @@ function setupLink(url) {
 
 
 function appendit(txt){
-	//text = text + $("#some").html( txt + "<br/>" );
-	//text = $("#console").value();
-	//$("#some").html(text);
-	//$("#some").html( txt + "<br/>" );
-	
-	
 	$("#some").html(txt);
-	//alert("1" + newMsg);
 	var newMsg = $("#some").html();
 	alert("1" + newMsg);
 	$("#some").html(prevState + "<br>" + newMsg);
 	prevState = $("#some").html();
 	alert("2" + prevState);
-	
-    	
-	
-	
-	
 }
 
 function eval_racket(code) {
@@ -189,6 +177,7 @@ function onHandle(line, report) {
 			results.push({msg: "", className: "jquery-console-message-value"});
 		} else {
 			results.push({msg: data.result, className: "jquery-console-message-value"});
+			appendit(data.result);
 		}
 	}
 	return results;

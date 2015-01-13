@@ -33,7 +33,7 @@ outline:none;
 }
 
 #some{
-visibility: hidden;
+display:none;
 }
 #navigator {
 	float:left;
