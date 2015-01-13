@@ -46,9 +46,7 @@ function goToPage(pageNumber) {
 	if (pageNumber == currentPage || pageNumber < 0 || pageNumber >= pages.length) {
 			return;
 	}
-
 	currentPage = pageNumber;
-
 	var block = $("#changer");
   	//block.fadeOut(function(e) {
       block.load("/tutorial", { 'page' : pages[pageNumber] }, function() {
@@ -58,12 +56,6 @@ function goToPage(pageNumber) {
 	//});
 }
 //loads pages in #changer from navi
-function setupLink2(url) {
-	return function(e) { $("#changer").load(url, function(data) { 
-		$("#changer").html(data);changerUpdated();  
-		});
-	}
-}
 
 function setupLink(url) {
     return function(e) { $("#changer").load(url, function(data) {
@@ -75,8 +67,24 @@ function setupLink(url) {
 
 
 function appendit(txt){
+	//text = text + $("#some").html( txt + "<br/>" );
+	//text = $("#console").value();
+	//$("#some").html(text);
+	//$("#some").html( txt + "<br/>" );
 	
-	text = text + $("#some").html( txt + "<br/>" );
+	
+	$("#some").html(txt);
+	//alert("1" + newMsg);
+	var newMsg = $("#some").html();
+	alert("1" + newMsg);
+	$("#some").html(prevState + "<br>" + newMsg);
+	prevState = $("#some").html();
+	alert("2" + prevState);
+	
+    	
+	
+	
+	
 }
 
 function eval_racket(code) {
@@ -203,7 +211,7 @@ function changerUpdated() {
 	});
 	});
 }
-var text = "";
+var prevState = "";
 var controller;
 $(document).ready(function() {
 	controller = $("#console").console({
@@ -223,14 +231,14 @@ $(document).ready(function() {
 	$("#expre").click(setupLink("expre"));
 	$("#eval").click(setupLink("eval"));
 	$("#functions").click(setupLink("functions"));
-	$("#predicate").click(setupLink("predicate.html"));
-	$("#cond").click(setupLink("cond.html"));
-	$("#special").click(setupLink("special.html"));
-	$("#sexpr").click(setupLink("sexpr.html"));
-	$("#listfunc").click(setupLink("listfunc.html"));
-	$("#createlist").click(setupLink("createlist.html"));
-	$("#enviroment").click(setupLink("enviroment.html"));
-	$("#evalproc").click(setupLink("evalproc.html"));
+	$("#predicate").click(setupLink("predicate"));
+	$("#cond").click(setupLink("cond"));
+	$("#special").click(setupLink("special"));
+	$("#sexpr").click(setupLink("sexpr"));
+	$("#listfunc").click(setupLink("listfunc"));
+	$("#createlist").click(setupLink("createlist"));
+	$("#enviroment").click(setupLink("enviroment"));
+	$("#evalproc").click(setupLink("evalproc"));
 	
 	$("#about").click(setupLink("about"));
 	$("#links").click(setupLink("links"));
